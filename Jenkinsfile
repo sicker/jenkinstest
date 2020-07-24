@@ -7,7 +7,8 @@ pipeline {
                 checkout([$class: 'GitSCM', 
                     branches: [[name: 'dev/1.0.0.0']],
                     extensions: [
-                        [$class: 'SparseCheckoutPaths',  sparseCheckoutPaths:[[$class:'SparseCheckoutPath', path:'config']]]
+                        [$class: 'SparseCheckoutPaths',  sparseCheckoutPaths:[[$class:'SparseCheckoutPath', path:'config']]],
+                        [$class: 'RelativeTargetDirectory', relativeTargetDir: 'packages']
                     ],
                     userRemoteConfigs: [[url: 'git@github.com:sicker/jenkinstest.git',
                                        credentialsId: 'sicker27GitHub']]
