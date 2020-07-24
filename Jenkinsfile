@@ -13,6 +13,9 @@ pipeline {
                     userRemoteConfigs: [[url: 'git@github.com:sicker/jenkinstest.git',
                                        credentialsId: 'sicker27github']]
                 ])
+                script {
+                    zip zipFile: 'config.zip',  dir: 'packages/config'
+                }
             }
         }
     }
