@@ -11,7 +11,7 @@ pipeline {
                         [$class: 'RelativeTargetDirectory', relativeTargetDir: 'packages']
                     ],
                     userRemoteConfigs: [[url: 'git@github.com:sicker/jenkinstest.git',
-                                       credentialsId: 'sicker27GitHub']]
+                                       credentialsId: 'sicker27github']]
                 ])
             }
         }
