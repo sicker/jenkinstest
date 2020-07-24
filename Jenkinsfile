@@ -5,7 +5,7 @@ pipeline {
             steps {
                 echo 'Hello world!' 
                 checkout([$class: 'GitSCM', 
-                    branches: [[name: $GIT_TAG]],
+                    branches: [[name: env.GIT_TAG]],
                     extensions: [
                         [$class: 'SparseCheckoutPaths',  sparseCheckoutPaths:[[$class:'SparseCheckoutPath', path:'config']]],
                         [$class: 'RelativeTargetDirectory', relativeTargetDir: 'packages']
